@@ -94,18 +94,18 @@ func TestGetWareki05_01(t *testing.T) {
 }
 
 func TestGetWareki06_01(t *testing.T) {
-    d := time.Date(1980, 1, 30, 10, 20, 30, 0, time.UTC)
-    g := NewWareki(d)
-    if g.gengo != "昭和" {
-        t.Errorf("%s is not 昭和", g.gengo)
+    d := time.Date(2012, 3, 28, 0, 0, 0, 0, time.UTC)
+    w := NewWareki(d)
+    if w.Gengo != "平成" {
+        t.Errorf("%s is not 平成", w.Gengo)
     }
-    if g.year != 55 {
-        t.Errorf("%d is not valid Wareki year", g.year)
+    if w.Year != 24 {
+        t.Errorf("%d is not valid Wareki year", w.Year)
     }
-    if g.String() != "昭和55年1月30日" {
-        t.Errorf("%s is not expected date", g.String())
+    if w.String() != "平成24年3月28日" {
+        t.Errorf("%s is not expected date", w.String())
     }
-    if d != g.date {
-        t.Errorf("%v is not expected date", g)
+    if d != w.Date {
+        t.Errorf("%v is not expected date", w)
     }
 }

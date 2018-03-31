@@ -7,9 +7,9 @@ import (
 )
 
 type Wareki struct {
-    gengo string
-    year int
-    date time.Time
+    Gengo string
+    Year int
+    Date time.Time
 }
 
 func GetWareki(d time.Time) (string, int, error) {
@@ -45,9 +45,9 @@ func NewWareki(d time.Time) *Wareki {
     if err != nil {
        return &Wareki{}
     }
-    return &Wareki{gengo:g, year:y, date:d}
+    return &Wareki{Gengo:g, Year:y, Date:d}
 }
 
 func (w *Wareki) String() string {
-   return fmt.Sprintf("%s%d年%d月%d日", w.gengo, w.year, w.date.Month(), w.date.Day())
+   return fmt.Sprintf("%s%d年%d月%d日", w.Gengo, w.Year, w.Date.Month(), w.Date.Day())
 }
