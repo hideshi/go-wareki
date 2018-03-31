@@ -1,4 +1,4 @@
-package gengo
+package wareki
 
 import (
     "time"
@@ -6,13 +6,13 @@ import (
     "fmt"
 )
 
-type Gengo struct {
+type Wareki struct {
     gengo string
     year int
     date time.Time
 }
 
-func GetGengo(d time.Time) (string, int, error) {
+func GetWareki(d time.Time) (string, int, error) {
     meijiBeginsOn := time.Date(1868, 1, 25, 0, 0, 0, 0, time.UTC)
     taishoBeginsOn := time.Date(1912, 7, 30, 0, 0, 0, 0, time.UTC)
     showaBeginsOn := time.Date(1926, 12, 25, 0, 0, 0, 0, time.UTC)
@@ -36,18 +36,18 @@ func GetGengo(d time.Time) (string, int, error) {
             gengo = "平成"
             base = 1989
     }
-    gengoYear := d.Year() - base + 1
-    return gengo, gengoYear, nil
+    year := d.Year() - base + 1
+    return gengo, year, nil
 }
 
-func NewGengo(d time.Time) *Gengo {
-    g, gy, err := GetGengo(d)
+func NewWareki(d time.Time) *Wareki {
+    g, y, err := GetWareki(d)
     if err != nil {
-       return &Gengo{}
+       return &Wareki{}
     }
-    return &Gengo{gengo:g, year:gy, date:d}
+    return &Wareki{gengo:g, year:y, date:d}
 }
 
-func (g *Gengo) String() string {
-   return fmt.Sprintf("%s%d年%d月%d日", g.gengo, g.year, g.date.Month(), g.date.Day())
+func (w *Wareki) String() string {
+   return fmt.Sprintf("%s%d年%d月%d日", w.gengo, w.year, w.date.Month(), w.date.Day())
 }
