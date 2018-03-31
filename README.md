@@ -1,6 +1,8 @@
 # Go言語用和暦ライブラリ
 
 ## 使い方
+
+### ライブラリを取得
 ```bash
 $ cd $GOPATH
 $ go get github.com/hideshi/go-wareki
