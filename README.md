@@ -8,7 +8,7 @@ package main
 import (
     "time"
     "fmt"
-    "wareki"
+    "github.com/hideshi/go-wareki"
 )
 
 func main() {
