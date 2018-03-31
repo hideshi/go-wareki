@@ -49,5 +49,9 @@ func NewWareki(d time.Time) *Wareki {
 }
 
 func (w *Wareki) String() string {
-   return fmt.Sprintf("%s%d年%d月%d日", w.Gengo, w.Year, w.Date.Month(), w.Date.Day())
+    if w.Year == 1 {
+        return fmt.Sprintf("%s%s年%d月%d日", w.Gengo, "元", w.Date.Month(), w.Date.Day())
+    } else {
+        return fmt.Sprintf("%s%d年%d月%d日", w.Gengo, w.Year, w.Date.Month(), w.Date.Day())
+    }
 }

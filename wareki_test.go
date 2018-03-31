@@ -109,3 +109,20 @@ func TestGetWareki06_01(t *testing.T) {
         t.Errorf("%v is not expected date", w)
     }
 }
+
+func TestGetWareki06_02(t *testing.T) {
+    d := time.Date(1926, 12, 26, 0, 0, 0, 0, time.UTC)
+    w := NewWareki(d)
+    if w.Gengo != "昭和" {
+        t.Errorf("%s is not 昭和", w.Gengo)
+    }
+    if w.Year != 1 {
+        t.Errorf("%d is not valid Wareki year", w.Year)
+    }
+    if w.String() != "昭和元年12月26日" {
+        t.Errorf("%s is not expected date", w.String())
+    }
+    if d != w.Date {
+        t.Errorf("%v is not expected date", w)
+    }
+}
