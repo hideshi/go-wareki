@@ -3,7 +3,7 @@ package main
 import (
     "time"
     "fmt"
-    "wareki"
+    "github.com/hideshi/go-wareki"
 )
 
 func main() {
@@ -19,5 +19,5 @@ func main() {
 
     // 和暦から西暦の日付を取得
     d := wareki.Date // time.Time型
-    fmt.Printf("%v\n", d) //
+    fmt.Printf("%v\n", d) // 2012-03-28 00:00:00 +0000 UTC
 }
